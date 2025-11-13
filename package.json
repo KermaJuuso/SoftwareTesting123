@@ -1,10 +1,12 @@
 {
   "name": "softwaretesting123",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests/**/*.test.js",
+    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,24 @@
   "bugs": {
     "url": "https://github.com/KermaJuuso/SoftwareTesting123/issues"
   },
-  "homepage": "https://github.com/KermaJuuso/SoftwareTesting123#readme"
+  "homepage": "https://github.com/KermaJuuso/SoftwareTesting123#readme",
+  "nyc": {
+    "reporter": [
+      "text",
+      "lcov"
+    ],
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "src/.internal/**",
+      "tests/**"
+    ]
+  },
+  "devDependencies": {
+    "chai": "^5.1.1",
+    "coveralls": "^3.1.1",
+    "mocha": "^11.0.0",
+    "nyc": "^15.1.0"
+  }
 }
