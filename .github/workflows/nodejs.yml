@@ -1,25 +1,31 @@
-on: ["push", "pull_request"]
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
-name: Test Coveralls
+name: Test and Report Coverage
 
 jobs:
-  build:
-    name: Build
+  test:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
 
-      - name: Install Node.js
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
 
-      - name: npm install, npm run coverage
-        run: |
-          npm install
-          npm run coverage
+      - name: Install dependencies
+        run: npm ci
 
-      - name: Coveralls
+      - name: Run tests and generate coverage
+        run: npm run coverage
+
+      - name: Upload coverage to Coveralls
         uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
