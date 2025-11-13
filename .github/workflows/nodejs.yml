@@ -1,8 +1,4 @@
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+on: ["push", "pull_request"]
 
 name: Test Coveralls
 
@@ -10,19 +6,20 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Install Node.js
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
 
-      - name: Install dependencies
-        run: npm ci
+      - name: npm install, make test-coverage
+        run: |
+          npm install
+          make test-coverage
 
-      - name: Run tests and coverage
-        run: npm run coverage
-        env:
-          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+      - name: Coveralls
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
