@@ -36,5 +36,8 @@ describe("isEmpty()", () => {
     expect(isEmpty(cart)).to.be.false;
   });
 
-  
+  it("should return true for null", () => {
+    expect(isEmpty(null)).to.be.true;
+  });
+
 });

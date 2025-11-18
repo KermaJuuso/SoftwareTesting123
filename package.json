@@ -24,7 +24,8 @@
     "include": [
       "src/add.js",
       "src/eq.js",
-      "src/isEmpty.js"
+      "src/isEmpty.js",
+      "src/toNumber.js"
     ]
   },
   "devDependencies": {
