@@ -6,31 +6,43 @@ describe("eq()", () => {
                     'name': 'GPU 4K',
                     'category': 'Component',
                     'price': '199.99'};
-    const object2 = {'id': 987,
+    const diffObject = {'id': 987,
                     'name': 'Banana',
                     'category': 'food',
                     'price': '0.99'};
     //Object 3 identical to object 1
-    const object3 = {'id': 123,
+    const objectSameValues = {'id': 123,
                     'name': 'GPU 4K',
                     'category': 'Component',
                     'price': '199.99'};
-    const copyObject = object1;
+    const alias = object1;
 
-  it("Identical objects should be equal", () => {
+  it("Same object returns true", () => {
     expect(eq(object1, object1)).to.be.true;
   });
 
-  it("Different objects should not be equal", () => {
-    expect(eq(object1, object2)).to.be.false;
+  it("Different objects return false", () => {
+    expect(eq(object1, diffObject)).to.be.false;
   });
 
-  it("Copied object should be equal", () => {
-    expect(eq(object1, copyObject)).to.be.true;
+  it("Alias reference returns true", () => {
+    expect(eq(object1, alias)).to.be.true;
   });
 
-  it("Objects with exact same values should not be equal", () => {
-    expect(eq(object1, object3)).to.be.false;
+  it("Return false for objects with same values but different references", () => {
+    expect(eq(object1, objectSameValues)).to.be.false;
+  });
+
+  it("Equal strings return true", () => {
+    expect(eq("NaN", "NaN")).to.be.true;
+  });
+
+  it("NaN and NaN return true", () => {
+    expect(eq(NaN, NaN)).to.be.true;
+  });
+
+  it("String compared to float returns true", () => {
+    expect(eq(object1.price, 199.99)).to.be.true;
   });
       
 });

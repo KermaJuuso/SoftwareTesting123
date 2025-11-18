@@ -23,7 +23,8 @@
     "extends": "@istanbuljs/nyc-config-babel",
     "include": [
       "src/add.js",
-      "src/eq.js"
+      "src/eq.js",
+      "src/isEmpty.js"
     ]
   },
   "devDependencies": {
