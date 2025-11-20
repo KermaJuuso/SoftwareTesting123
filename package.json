@@ -25,7 +25,8 @@
       "src/add.js",
       "src/eq.js",
       "src/isEmpty.js",
-      "src/toNumber.js"
+      "src/toNumber.js",
+      "src/filter.js"
     ]
   },
   "devDependencies": {
