@@ -27,6 +27,7 @@
       "src/isEmpty.js",
       "src/toNumber.js",
       "src/filter.js"
+      "src/countBy.js"
     ]
   },
   "devDependencies": {
