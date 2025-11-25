@@ -24,7 +24,10 @@
     "include": [
       "src/add.js",
       "src/eq.js",
-      "src/countBy.js"
+      "src/countBy.js",
+      "src/isEmpty.js",
+      "src/toNumber.js",
+      "src/filter.js"
     ]
   },
   "devDependencies": {
