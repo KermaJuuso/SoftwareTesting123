@@ -27,7 +27,8 @@
       "src/countBy.js",
       "src/isEmpty.js",
       "src/toNumber.js",
-      "src/filter.js"
+      "src/filter.js",
+      "src/words.js"
     ]
   },
   "devDependencies": {
