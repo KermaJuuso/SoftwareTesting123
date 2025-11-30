@@ -40,4 +40,12 @@ describe("isEmpty()", () => {
     expect(isEmpty(null)).to.be.true;
   });
 
+  it("map and set should return false", () => {
+    expect(isEmpty(new Map([['a', 1]]))).to.be.false;
+    expect(isEmpty(new Set([['a', 1]]))).to.be.false;
+  });
+
+  it("prototype should return false", () => {
+    expect(isEmpty(Object.prototype)).to.be.true;
+  });
 });
