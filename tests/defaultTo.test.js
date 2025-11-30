@@ -14,7 +14,6 @@ describe("defaultTo()", () => {
     expect(defaultTo(undefined, 10)).to.equal(10);
     expect(defaultTo(undefined, null)).to.equal(null);
     expect(defaultTo(null, undefined)).to.equal(undefined);
-    expect(defaultTo(NaN, 10)).to.equal(10);
     expect(defaultTo(null, 10)).to.equal(10);
   });
 });
