@@ -28,7 +28,8 @@
       "src/isEmpty.js",
       "src/toNumber.js",
       "src/filter.js",
-      "src/words.js"
+      "src/words.js",
+      "src/at.js"
     ]
   },
   "devDependencies": {
