@@ -29,7 +29,9 @@
       "src/toNumber.js",
       "src/filter.js",
       "src/words.js",
-      "src/at.js"
+      "src/at.js",
+      "src/defaultTo.js",
+      "src/upperFirst.js"
     ]
   },
   "devDependencies": {
