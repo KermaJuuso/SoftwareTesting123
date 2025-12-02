@@ -61,6 +61,9 @@ describe("words()", () => {
         expect(words("café latte super drink", /\]/g)).to.be.an("array").that.has.lengthOf(0);
     });
 
+    it("Empty string should return 0 len array", () => {
+        expect(words("")).to.be.an("array").that.has.lengthOf(0);
+    });
 });
 
 
